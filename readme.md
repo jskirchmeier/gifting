@@ -11,8 +11,8 @@ In order to crate the optimum gift giving assignment list a few simple rules are
 
 1.  A person cannot receive more than one gift
 1.  A person cannot give more than one gift
-1.  You cannot be assigned someone in your 'family' (spouse, children), but only those outside
-    the family (siblings, nephews, ...)
+1.  You cannot be assigned someone in your imediate family (spouse, children), but only those outside
+    (siblings, nephews, ...)
 1.  The number of repeat assignments should be kept to a minimum
     *   More recent repeats count more that old repeats
     *   Someone with fewer past repeats should be given a repeat over someone with more past repeats
@@ -33,10 +33,10 @@ Possible Pairs            :                                        24
 Possible Solutions        :                                     4,096
 ```
 
-This can be done manually and was kept a spreadsheet, updating it each year and manually figuring out with the new 
-parings would be. As children grow they joined the 'adults' pool (in our family it was the year after graduation from high school,
+This can be done manually and was kept in a spreadsheet, updating it each year and manually figuring out with the new 
+parings would be. As children grow they joined the 'adult' pool (in our family it was the year after graduation from high school,
 so you not only had to become an adult but stopped getting presents from all of your aunts and uncles and now just got
-one and had to buy one also).  The kids get married and the spouses join the pool.   This manual process became quite a 
+one and had to buy one also).  Kids get married and the spouses joined the pool.   This manual process became quite a 
 burden and sub-optimal assignments were made (these bad early decisions still haunt the current calculations as all 
 history is needed to make the best assignments).
 
@@ -53,11 +53,12 @@ Soon it became apparent we needed to automate!  So a simple brute force Java app
 It determined which of the possible solutions were legal and then scored them.  The one with the best score won!  
 Not efficient but what the heck it only had to be run once a year and so what if it took several minutes to do it's thing.
 
+The pool continued to grow and the time to calculate the solution also grew (and not linearly).  
 The calculations were taking hours and then when it ran overnight without completion I killed it and took the best 
 solution found so far.  For the following year a new Java program was used that did some smart graph eliminations and 
 reduced that time to seconds.  This has been used for a number years.
 
-The pool continued to grow and the time to calculate the solution also grew (and not linearly).  Our pool is now   
+Our pool is now   
 families of size 5, 6, 9, and 2 for 22 total in the pool.
 
 ```
